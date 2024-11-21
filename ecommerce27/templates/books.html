@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title> assignment7</title>
+</head>
+<style>
+ table, th, td {
+  border: 1px solid black;
+  width=100%;
+    }
+</style>
+<body>
+{% if books%}
+    <h1> Books </h1>
+    <table>
+        <tr>
+            <th> Tittle </th>
+            <th> Author </th>
+            <th> Year </th>
+        </tr>
+    {% for book in books %}
+        <tr>
+            <td> {{ book.tittle }}</td>
+            <td> {{ book.author }}</td>
+            <td> {{ book.year }}</td>
+
+        </tr>
+{% endfor %}
+    </table>
+{% else %}
+    <p> No books available. </p>
+{% endif %}
+</body>
+</html>
